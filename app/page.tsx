@@ -55,7 +55,7 @@ export default function Home() {
             <Link href='/create' className='w-full sm:w-auto'>
               <Button
                 size='lg'
-                className='group w-full rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 px-12 py-7 text-xl font-semibold text-white shadow-lg shadow-purple-400/40 transition-all duration-300 hover:scale-105 hover:shadow-purple-500/50 sm:w-auto'
+                className='group w-full rounded-full bg-gradient-to-r cursor-pointer from-purple-600 via-pink-500 to-orange-400 px-12 py-7 text-xl font-semibold text-white shadow-lg shadow-purple-400/40 transition-all duration-300 hover:scale-105 hover:shadow-purple-500/50 sm:w-auto'
               >
                 Start Creating Now ✨
                 <span className='ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1'>
@@ -114,7 +114,7 @@ export default function Home() {
           <Link href='/create' className='relative mt-8 w-full sm:w-auto'>
             <Button
               size='lg'
-              className='w-full rounded-full bg-white px-10 py-5 text-lg font-semibold text-purple-600 shadow-xl transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl sm:w-auto'
+              className='w-full rounded-full bg-white px-10 py-5 text-lg cursor-pointer font-semibold text-purple-600 shadow-xl transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl sm:w-auto'
             >
               Craft A Story In Minutes 🚀
             </Button>
