@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Step1_Details from './steps/Step1_Details';
 import Step2_Character from './steps/Step2_Character';
@@ -8,6 +9,7 @@ import Step3_Style from './steps/Step3_Style';
 import WizardControls from './WizardControls';
 
 export default function BookCreationWizard() {
+  const router = useRouter();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     title: '',
@@ -24,6 +26,9 @@ export default function BookCreationWizard() {
   const nextStep = () => {
     if (step < 3) {
       setStep(step + 1);
+    } else if (step === 3) {
+      // When user clicks "Create Book ✨", navigate to generating page
+      router.push('/generating');
     }
   };
 

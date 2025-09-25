@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Progress } from '@/components/ui/progress';
 
 const generationSteps = [
@@ -12,6 +13,7 @@ const generationSteps = [
 ];
 
 export default function GeneratingPage() {
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(0);
   const [progress, setProgress] = useState(0);
 
@@ -30,8 +32,10 @@ export default function GeneratingPage() {
 
         if (newProgress >= 100) {
           clearInterval(timer);
-          // Here you could redirect to the book page
-          // router.push('/book/123');
+          // Redirect to the book page after generation is complete
+          setTimeout(() => {
+            router.push('/book/123');
+          }, 1000); // Small delay to show completion
           return 100;
         }
         return newProgress;
